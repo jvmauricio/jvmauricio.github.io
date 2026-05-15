@@ -1,90 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Mauricio — AI, BI, Analytics, Cloud</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <meta name="author" content="John Vincent Mauricio">
-    <meta name="description" content="John Vincent&#39;s personal website">
-    <meta name="keywords" content="business intelligence,consultant">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 1.5rem;
+            line-height: 1.6;
+        }
 
-    <base href="https://jvmauricio.net">
-    <title>jvmauricio</title>
+        .container {
+            max-width: 720px;
+            width: 100%;
+            text-align: center;
+        }
 
-    <link rel="canonical" href="https://jvmauricio.net/">
+        header {
+            margin-bottom: 2.5rem;
+        }
 
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-    <link rel="stylesheet" href="https://jvmauricio.net/css/style.min.css">
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
 
-    
+        .subheader {
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            font-weight: 300;
+            color: #94a3b8;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
 
-    
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            border-radius: 2px;
+            margin: 1.5rem auto;
+        }
 
-    <link rel="icon" type="image/png" href="https://jvmauricio.net/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://jvmauricio.net/images/favicon-16x16.png" sizes="16x16">
+        .bio {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: #cbd5e1;
+            max-width: 640px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
 
-    
-      <link href="https://jvmauricio.net/index.xml" rel="alternate" type="application/rss+xml" title="jvmauricio" />
-      <link href="https://jvmauricio.net/index.xml" rel="feed" type="application/rss+xml" title="jvmauricio" />
-    
+        .bio strong {
+            color: #e2e8f0;
+            font-weight: 600;
+        }
 
-    <meta name="generator" content="Hugo 0.42.1" />
-  </head>
+        .certs-section {
+            margin-top: 1rem;
+        }
 
-  <body class="">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://jvmauricio.net">
-      jvmauricio
-    </a>
-    
-    <ul class="navigation-list  float-right ">
-      
-      <li class="navigation-item">
-        <a class="navigation-link" href="https://jvmauricio.net/about/">About Me</a>
-      </li>
-      
-    </ul>
-    
-  </section>
-</nav>
+        .certs-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
 
+        .certs-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
+        }
 
-      <div class="content">
-        
-  <section class="container centered">
-  <div class="about">
-    <h1>John Vincent Mauricio</h1>
-    <h2 style="font-weight:300">AI, BI, Analytics, Cloud</h2>
-    
-    <ul>
-      
-      <li><a href="https://github.com/jvmauricio/">  Github</a></li>
-      
-      <li><a href="https://www.linkedin.com/in/jvmauricio/">  LinkedIn</a></li>
-      
-      <li><a href="https://jvmauricio.net/about/">  Contact Me</a></li>
-      
-    </ul>
-    
-  </div>
-</section>
+        .cert-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            transition: transform 0.3s ease;
+        }
 
+        .cert-item:hover {
+            transform: translateY(-4px);
+        }
 
-      </div>
+        .cert-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+            transition: filter 0.3s ease;
+        }
 
-      <footer class="footer">
-  <section class="container">
-  </section>
-</footer>
+        .cert-item:hover img {
+            filter: drop-shadow(0 6px 20px rgba(96, 165, 250, 0.3));
+        }
 
-    </main>
+        .certs-label a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-    
+        .certs-label a:hover {
+            color: #60a5fa;
+        }
 
-  </body>
+        .cert-name {
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
 
+        footer {
+            margin-top: 4rem;
+            font-size: 0.75rem;
+            color: #475569;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 2.5rem 1rem; }
+            .certs-grid { gap: 1.5rem; }
+            .cert-item img { width: 64px; height: 64px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>John Mauricio</h1>
+            <p class="subheader">AI, BI, Analytics, Cloud</p>
+        </header>
+
+        <div class="divider"></div>
+
+        <p class="bio">
+            With <strong>17 years</strong> of extensive experience in <strong>Business Intelligence (BI) and Analytics</strong>,
+            I have collaborated with <strong>14 diverse clients</strong> across <strong>nine industries</strong>, including
+            Logistics, Energy, Insurance, Telecommunications, Utilities, Healthcare, Gaming, Retail, and Banking.
+            My expertise lies in leading end-to-end BI initiatives as both a developer and project manager,
+            in the <strong>Philippines</strong> and <strong>internationally</strong>. My international experience has equipped me
+            with a global perspective and the adaptability to work effectively in multicultural environments.
+        </p>
+
+        <div class="certs-section">
+            <p class="certs-label">reach out at <a href="mailto:contact@jvmauricio.net">contact@jvmauricio.net</a></p>
+            <div class="certs-grid">
+                <div class="cert-item">
+                    <img src="images/adf.png" alt="Azure Data Factory">
+                </div>
+                <div class="cert-item">
+                    <img src="images/af.png" alt="Azure Fundamentals">
+                </div>
+                <div class="cert-item">
+                    <img src="images/genai.png" alt="Generative AI">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 John Mauricio</p>
+    </footer>
+</body>
 </html>
