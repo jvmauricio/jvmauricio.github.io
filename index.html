@@ -145,6 +145,28 @@
             color: #475569;
         }
 
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            opacity: 0;
+            animation: fadeUp 0.7s ease-out forwards;
+        }
+
+        .animate-in:nth-child(1) { animation-delay: 0.1s; }
+        .animate-in:nth-child(2) { animation-delay: 0.25s; }
+        .animate-in:nth-child(3) { animation-delay: 0.4s; }
+        .animate-in:nth-child(4) { animation-delay: 0.55s; }
+        .animate-in:nth-child(5) { animation-delay: 0.7s; }
+
         @media (max-width: 480px) {
             body { padding: 2.5rem 1rem; }
             .certs-grid { gap: 1.5rem; }
@@ -155,13 +177,13 @@
 <body>
     <div class="container">
         <header>
-            <h1>John Mauricio</h1>
-            <p class="subheader">AI, Analytics, Cloud</p>
+            <h1 class="animate-in">John Mauricio</h1>
+            <p class="subheader animate-in">AI, Analytics, Cloud</p>
         </header>
 
-        <div class="divider"></div>
+        <div class="divider animate-in"></div>
 
-        <p class="bio">
+        <p class="bio animate-in">
             With <strong>17 years</strong> of extensive experience in <strong>Business Intelligence and Analytics</strong>,
             I have collaborated with <strong>14 diverse clients</strong> across <strong>nine industries</strong>, including
             Logistics, Energy, Insurance, Telecommunications, Utilities, Healthcare, Gaming, Retail, and Banking.
@@ -169,7 +191,7 @@
             in the <strong>Philippines</strong> and <strong>internationally</strong>.
         </p>
 
-        <div class="certs-section">
+        <div class="certs-section animate-in">
             <p class="certs-label">reach out at <a href="mailto:contact@jvmauricio.net">contact@jvmauricio.net</a></p>
             <div class="certs-grid">
                 <div class="cert-item">
